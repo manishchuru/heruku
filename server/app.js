@@ -2,6 +2,7 @@ const express = require('express');
 require('./mongoose');
 const Iphone = require('./schema.js');
 const app = express();
+const port = process.env.PORT||4000;
 app.use(express.json());
 app.use(express.urlencoded({extended:false}))
 app.get('/Hello',async(req,res)=>{
@@ -15,4 +16,4 @@ app.post('/Hello',async(req,res)=>{
     console.log(detail);
     
 })
-app.listen(4000,console.log('hello server on here dont worry'))
+app.listen(port,console.log('hello server on here dont worry'))
